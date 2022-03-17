@@ -1,0 +1,103 @@
+commit e30b162372e6563bad90cf4e8f22f5e629649447
+Author: Eemil Arola <eemil.arola@gmail.com>
+Date:   Thu Mar 17 14:29:06 2022 +0200
+
+    t11 loppupuoli
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 8714eee6d3a5b758fb6049e51a5e9e0db05b995e
+Author: Eemil Arola <eemil.arola@gmail.com>
+Date:   Thu Mar 17 14:25:36 2022 +0200
+
+    t11 alku
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit cb3f77153b8a5770a38939e172940b02b3b05a21
+Author: Eemil Arola <eemil.arola@gmail.com>
+Date:   Thu Mar 17 14:17:13 2022 +0200
+
+    t8 loppu
+
+ eka.txt    | 19 +------------------
+ kolmas.txt | 13 +++++++++++++
+ 2 files changed, 14 insertions(+), 18 deletions(-)
+
+commit 70a14d8e9820e953e1cc53ab8979741be43d2958
+Author: Eemil Arola <eemil.arola@gmail.com>
+Date:   Thu Mar 17 14:13:37 2022 +0200
+
+    t8 valmis
+
+ tiedosto.txt | 54 ------------------------------------------------------
+ 1 file changed, 54 deletions(-)
+
+commit 3e155121c2fa46ba07e7b09ecd15d669283f2ef4
+Author: Eemil Arola <eemil.arola@gmail.com>
+Date:   Thu Mar 17 14:09:35 2022 +0200
+
+    t8 muutos 2
+
+ eka.txt | 54 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 54 insertions(+)
+
+commit dcb9fc9fe19f8ff886dc8f76711d606d177861b5
+Author: Eemil Arola <eemil.arola@gmail.com>
+Date:   Thu Mar 17 14:08:34 2022 +0200
+
+    t8 muutos
+
+ tiedosto.txt | 53 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 53 insertions(+)
+
+commit e2f22aef6bb54c6d411c33d1e9e99e778a20e8dc
+Author: Eemil Arola <eemil.arola@gmail.com>
+Date:   Thu Mar 17 14:07:04 2022 +0200
+
+    t8 muutos
+
+ toinen.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 03dfab697274b8628fd3b722174b1226869ddd90
+Author: Eemil Arola <eemil.arola@gmail.com>
+Date:   Thu Mar 17 13:36:22 2022 +0200
+
+    stuffcommit
+
+ stuff/jokin.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit f48e1e8134f5eff6311f6605bcf6c35e43e88846
+Author: Eemil Arola <eemil.arola@gmail.com>
+Date:   Thu Mar 17 13:33:47 2022 +0200
+
+    tehtava 6 committi
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit b93ff490b7a03f6ffd9628c4a67d1abcb502688d
+Author: Eemil Arola <eemil.arola@gmail.com>
+Date:   Thu Mar 17 13:28:44 2022 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit c460ba4cddcc61d4be832d64c78e18052d2a18ec
+Author: Eemil Arola <eemil.arola@gmail.com>
+Date:   Tue Mar 15 13:52:32 2022 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)

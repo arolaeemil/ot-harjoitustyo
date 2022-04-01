@@ -12,11 +12,11 @@
 	Normaalit_kadut "1" -- "1" Hotelli
 	Normaalit_kadut "1" -- "4" Talo
 	Ruutu "1" -- "1" Toiminto
-	Normaalit_kadut --|> Ruutu
-	Aloitusruutu --[> Ruutu
+	Normaalit_kadut --> Ruutu
+	Aloitusruutu --> Ruutu
 	Vankila --> Ruutu
-	Sattuma_ja_yhteismaa --|> Ruutu
-	Asemat_ja_laitokset --|> Ruutu
+	Sattuma_ja_yhteismaa --> Ruutu
+	Asemat_ja_laitokset --> Ruutu
 	
 	class Monopolipeli{
 	pelaajat

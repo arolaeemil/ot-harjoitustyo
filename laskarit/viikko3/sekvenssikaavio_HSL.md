@@ -13,7 +13,7 @@
     
     paricipant kallen kortti
     
-    Main->>HKLLaintehallinto: Laitehallinto()
+    Main ->> HKLLaintehallinto: Laitehallinto()
     
     Main->>Lataajalaite: Lataajalaite()
     Main->>Lukijalaita: Lukijalaite()

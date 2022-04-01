@@ -14,7 +14,7 @@
 	Ruutu "1" -- "1" Toiminto
 	Normaalit_kadut --|> Ruutu
 	Aloitusruutu --|> Ruutu
-	Vankila --|> Ruutu
+	Vankila --> Ruutu
 	Sattuma_ja_yhteismaa --|> Ruutu
 	Asemat_ja_laitokset --|> Ruutu
 	

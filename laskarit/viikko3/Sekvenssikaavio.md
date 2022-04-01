@@ -4,12 +4,12 @@
     participant Machine
     participant Fueltank
     participant Engine
-    Main->>Machine: __init__
-    Machine->>Fueltank: __init__
-    Machine->>Fueltank: fill
-    Machine->>Engine: __init__
-    Main->>Machine: drive
-    Machine->>Engine: start
-    Machine->>Engine: is_running
+    Main->>Machine: Machine()
+    Machine->>Fueltank: Fueltank()
+    Machine->>Fueltank: fueltank.fill(40)
+    Machine->>Engine: Engine(fueltank)
+    Main->>Machine: machine.drive()
+    Machine->>Engine: engine.start()
+    Machine->>Engine: engine.is_running()
     
 ```

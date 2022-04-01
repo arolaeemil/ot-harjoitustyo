@@ -2,7 +2,7 @@
  classDiagram
 	Pelaaja "2-8" -- "1" Pelilauta
 	Ruutu "40" -- "1" Pelilauta
-	Pelaaja "1" -- "1" pelinappula
+	Pelaaja "1" -- "1" Pelinappula
 	Pelilauta "1" -- "2" Noppa
 	class Pelaaja{
 	pelinappula

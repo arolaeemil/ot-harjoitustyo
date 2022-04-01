@@ -9,7 +9,7 @@
     participant rautatietori
     participant ratikka6
     participant bussi244   
-    paricipant kallen kortti
+    paricipant kallen_kortti
     
     Main->>HKLLaitehallinto: Laitehallinto()
     Main->>Lataajalaite: Lataajalaite()

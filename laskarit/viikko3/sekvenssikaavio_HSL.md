@@ -10,7 +10,6 @@
     participant ratikka6
     participant bussi244   
     paricipant kallen_kortti
-    
     Main->>HKLLaitehallinto: Laitehallinto()
     Main->>Lataajalaite: Lataajalaite()
     Main->>Lukijalaita: Lukijalaite()

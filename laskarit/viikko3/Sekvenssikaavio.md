@@ -1,15 +1,15 @@
 ```mermaid
  sequenceDiagram
-    participant Main
+    participant Metodi
     participant Machine
     participant Fueltank
     participant Engine
     Main->>Machine: Machine()
-    Machine->>Fueltank: Fueltank()
-    Machine->>Fueltank: fueltank.fill(40)
-    Machine->>Engine: Engine(fueltank)
-    Main->>Machine: machine.drive()
-    Machine->>Engine: engine.start()
-    Machine->>Engine: engine.is_running()
+    Machine->>Fueltank: self.Fueltank()
+    Machine->>Fueltank: self.fueltank.fill(40)
+    Machine->>Engine: Engine(self.fueltank)
+    Main->>Machine: self.drive()
+    Machine->>Engine: self.engine.start()
+    Machine->>Engine: self.engine.is_running()
     
 ```

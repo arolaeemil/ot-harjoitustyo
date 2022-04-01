@@ -5,7 +5,7 @@
 	Ruutu "40" -- "1" Pelilauta
 	Pelaaja "1" -- "1" Pelinappula
 	Monopolipeli "1" -- "2" Noppa
-	Pelinappula "1" -- "1" Ruutu
+	Pelinappula "*" -- "1" Ruutu
 	Aloitusruutu "1" -- "1" Monopolipeli
 	Vankila "1" -- "1" Monopolipeli
 	Kortti "1" -- "1" Sattuma_ja_yhteismaa

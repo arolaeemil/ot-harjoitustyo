@@ -4,7 +4,7 @@
 	Pelilauta "1" -- "1" Monopolipeli
 	Ruutu "40" -- "1" Pelilauta
 	Pelaaja "1" -- "1" Pelinappula
-	Peli "1" -- "2" Noppa
+	Monopolipeli "1" -- "2" Noppa
 	Pelinappula "1" -- "1" Ruutu
 	Aloitusruutu "1" -- "1" Monopolipeli
 	Vankila "1" -- "1" Monopolipeli

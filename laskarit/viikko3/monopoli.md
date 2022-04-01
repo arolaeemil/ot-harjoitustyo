@@ -13,7 +13,7 @@
 	Normaalit_kadut "1" -- "4" Talo
 	Ruutu "1" -- "1" Toiminto
 	Normaalit_kadut --|> Ruutu
-	Aloitusruutu --|> Ruutu
+	Aloitusruutu --[> Ruutu
 	Vankila --> Ruutu
 	Sattuma_ja_yhteismaa --|> Ruutu
 	Asemat_ja_laitokset --|> Ruutu

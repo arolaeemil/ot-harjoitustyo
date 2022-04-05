@@ -5,6 +5,7 @@ Sovellus on peli, joka on valmiina melko space invaders-tyyppinen sisältäen al
 Viholliset tulevat ampumaan myös takaisin ja pelin lopullinen versio mahdollisesti sisältää pomovastustajan ja pisteiden laskun.
 
 **Pelin toimivuus**
+
 Peli on tarkoitettu toimivaksi Pythonin versiolla 3.8. Muut versiot saattavat toimia, mutta tätä ei taata. Pelissä on käytetty pygame-kirjastoa.
 
 **Kehitysvaiheen aikainen käyttö**

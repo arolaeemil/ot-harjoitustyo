@@ -21,7 +21,7 @@ Peli voidaan käynnistää Ubuntulla komentorivillä komennolla "poetry run invo
 
 **Testaus**
 
-Olemassa olevat testit voi ajaa komennolla "poetry run invoke tests"
+Olemassa olevat testit voi ajaa komennolla "poetry run invoke test"
 
 **Testikattavuus**
 

@@ -11,7 +11,7 @@ import os
              #[0, 0, 0, 0, 0],
              #[0, 0, 1, 0, 0]]
 
-n = 100
+n = 70
 
 LEVEL_MAP = []
 for i in range(0,n):

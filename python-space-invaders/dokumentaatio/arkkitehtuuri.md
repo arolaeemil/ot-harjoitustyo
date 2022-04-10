@@ -8,7 +8,7 @@ Pelin käynnistää luokka game ja pelisilmukkana toimii luokka gameloop. Gamelo
 ## Luokkakaavio
 ```mermaid
  classDiagram
-	Game "1" -- "1" gameloop
+	game "1" -- "1" gameloop
   level "1" -- "1" gameloop
   level "1" -- "1" game
   renderer "1" -- "1"game

@@ -27,4 +27,4 @@ Huomioita luokista:
 
 Spritejä ovat basicenemy, spaceship, shot, blob, blocker, explosion.
 Spaceschip luokka toimii pelaajan ohjaamana aluksena, viholliset edustavat luokkaa basicenemy.
-Pelaajan ammukset kuvataan luokalla shot ja vihollisten ammukset luokalla blob. Blocker luokka muodostaa alueen, jolle muut objektit eivät voi mennä, tällä hetkellä kentän reunat.
+Pelaajan ammukset kuvataan luokalla shot ja vihollisten ammukset luokalla blob. Blocker luokka muodostaa alueen, jolle muut objektit eivät voi mennä, tällä hetkellä kentän reunat. Explosion on tällä hetkellä puhtaasti graafinen efekti.

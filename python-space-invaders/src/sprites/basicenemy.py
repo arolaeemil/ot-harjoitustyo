@@ -1,6 +1,6 @@
-import pygame
 import os
-from random import *
+from random import choice, randint
+import pygame
 
 # path to get the file
 dirname = os.path.dirname(__file__)
@@ -9,7 +9,7 @@ dirname = os.path.dirname(__file__)
 
 
 class Basicenemy(pygame.sprite.Sprite):
-    def __init__(self, x=0, y=0):
+    def __init__(self, x_coord=0, y_coord=0):
         # constructor call
         super().__init__()
 
@@ -22,15 +22,15 @@ class Basicenemy(pygame.sprite.Sprite):
         self.previous_move_time = 0
         self.previous_shot_time = 0
         # starting x- and y-coordinates
-        self.rect.x = x
-        self.rect.y = y
-        self.movedir = choice([-10,-9,-8,-7,-6,-5,5,6,7,8,9,10])/10
+        self.rect.x = x_coord
+        self.rect.y = y_coord
+        self.movedir = choice([-10, -9, -8, -7, -6, -5, 5, 6, 7, 8, 9, 10])/10
 
     def give_coords(self):
         return (self.rect.x, self.rect.y)
 
     def can_shoot(self, current_time):
-        new_timer = randint(1,10)*4000
+        new_timer = randint(1, 10)*4000
         return current_time - self.previous_shot_time >= new_timer
 
     def should_move(self, current_time):

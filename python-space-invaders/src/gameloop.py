@@ -17,7 +17,7 @@ class GameLoop:
 
     def start(self):
         while True:
-            if self._handle_events() == False:
+            if self._handle_events() is False:
                 break
 
             # time
@@ -25,23 +25,23 @@ class GameLoop:
             self._level.update(current_time)
 
             game_over = self._level.ship_is_kill()
-            #print(game_over)
-            if game_over == True:
+            # print(game_over)
+            if game_over is True:
                 self._renderer.game_over()
-                #break
+                # break
                 continue
 
-            if self.shoot == True:
+            if self.shoot is True:
                 time = self._clock.get_ticks()
                 self._level.shoot(self._level.ship, time)
-            if self.up == True:
-                self._level.move_ship(dy=-self._cell_size)
-            if self.down == True:
-                self._level.move_ship(dy=self._cell_size)
-            if self.left == True:
-                self._level.move_ship(dx=-self._cell_size)
-            if self.right == True:
-                self._level.move_ship(dx=self._cell_size)
+            if self.up is True:
+                self._level.move_ship(diff_y=-self._cell_size)
+            if self.down is True:
+                self._level.move_ship(diff_y=self._cell_size)
+            if self.left is True:
+                self._level.move_ship(diff_x=-self._cell_size)
+            if self.right is True:
+                self._level.move_ship(diff_x=self._cell_size)
 
             self._render()
 

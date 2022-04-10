@@ -1,5 +1,5 @@
-import pygame
 import os
+import pygame
 
 # path to get the file
 dirname = os.path.dirname(__file__)
@@ -8,7 +8,7 @@ dirname = os.path.dirname(__file__)
 
 
 class Spaceship(pygame.sprite.Sprite):
-    def __init__(self, x=0, y=0):
+    def __init__(self, x_coord=0, y_coord=0):
         # constructor call
         super().__init__()
 
@@ -20,8 +20,8 @@ class Spaceship(pygame.sprite.Sprite):
         # for fire cooldown
         self.previous_shot_time = 0
         # starting x- and y-coordinates
-        self.rect.x = x
-        self.rect.y = y
+        self.rect.x = x_coord
+        self.rect.y = y_coord
         self.health = 5
 
     def give_coords(self):
@@ -33,5 +33,4 @@ class Spaceship(pygame.sprite.Sprite):
     def is_dead(self):
         if self.health <= 0:
             return True
-        else:
-            return False
+        return False

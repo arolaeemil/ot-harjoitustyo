@@ -16,3 +16,7 @@ Säätämistä gitin, poetryn, invoken jne. kanssa. Koska Ubuntu for Windows nii
 
 Yhteensä 1 tuntia.
 Dokumenttien kuntoon laittoa ja testausta etätyöaseman kautta. Tässä ongelmia poetryn ja pythonin versioiden kanssa. Lopulta saatu toimimaan siten, että luotan siihen että toimii kun tarkastaja yrittää.
+
+**10.4**
+yhteensä 9 tuntia.
+Lisätty paljon toiminnallisuutta koskien vihollisia. Alkutoimenpiteet pisteidenlaskua ja pelaajan elämiä varten tehty. Korjattu pylintin antamia virheitä, joita oli paljon. Laajennettu testejä. Tehty luokkakaaviota. Päivitetty dokumentaatiota. Lisätty task-komentoja. Testattu etäyhteyden kautta.

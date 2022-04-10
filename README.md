@@ -20,6 +20,8 @@ Peli voidaan käynnistää Ubuntulla komentorivillä komennolla "poetry run invo
 
 [Vaatimusmäärittely](https://github.com/arolaeemil/ot-harjoitustyo/blob/master/python-space-invaders/dokumentaatio/vaatimusmaarittely.md)
 
+[Arkkitehtuuri](https://github.com/arolaeemil/ot-harjoitustyo/blob/master/python-space-invaders/dokumentaatio/arkkitehtuuri.md)
+
 **Testaus**
 
 Olemassa olevat testit voi ajaa komennolla "poetry run invoke test"

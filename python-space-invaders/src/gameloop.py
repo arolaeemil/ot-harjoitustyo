@@ -1,5 +1,6 @@
 import pygame
 
+
 class GameLoop:
     def __init__(self, level, renderer, event_queue, clock, cell_size):
         self._level = level
@@ -18,10 +19,17 @@ class GameLoop:
         while True:
             if self._handle_events() == False:
                 break
-            
-            #time
+
+            # time
             current_time = self._clock.get_ticks()
             self._level.update(current_time)
+
+            game_over = self._level.ship_is_kill()
+            #print(game_over)
+            if game_over == True:
+                self._renderer.game_over()
+                #break
+                continue
 
             if self.shoot == True:
                 time = self._clock.get_ticks()
@@ -45,7 +53,7 @@ class GameLoop:
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RIGHT:
-                    #print("test")
+                    # print("test")
                     self.right = True
                 if event.key == pygame.K_LEFT:
                     self.left = True
@@ -55,7 +63,7 @@ class GameLoop:
                     self.up = True
                 if event.key == pygame.K_SPACE:
                     self.shoot = True
-                
+
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_RIGHT:
                     self.right = False

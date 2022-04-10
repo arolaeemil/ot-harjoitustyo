@@ -5,6 +5,8 @@ import os
 dirname = os.path.dirname(__file__)
 
 # sprite class is inherited
+
+
 class Shot(pygame.sprite.Sprite):
     def __init__(self, x=0, y=0):
         # constructor call
@@ -12,7 +14,8 @@ class Shot(pygame.sprite.Sprite):
         self.previous_move_time = 0
 
         # getting the image for the ship
-        self.image = pygame.image.load(os.path.join(dirname, "..", "assets", "missile.png"))
+        self.image = pygame.image.load(os.path.join(
+            dirname, "..", "assets", "missile.png"))
         # rectacular shape (50x50)
         self.rect = self.image.get_rect()
 
@@ -21,7 +24,7 @@ class Shot(pygame.sprite.Sprite):
         self.rect.y = y
 
     def should_move(self, current_time):
-        return current_time - self.previous_move_time >= 500
-    
+        return current_time - self.previous_move_time >= 30
+
     def give_coords(self):
         return (self.rect.x, self.rect.y)

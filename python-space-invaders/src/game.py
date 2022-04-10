@@ -5,18 +5,19 @@ from event_queue import EventQueue
 from renderer import Renderer
 from clock import Clock
 import os
+from random import *
 
-#LEVEL_MAP = [[0, 0, 0, 0, 0],
-             #[0, 0, 0, 0, 0],
-             #[0, 0, 0, 0, 0],
-             #[0, 0, 1, 0, 0]]
+# LEVEL_MAP = [[0, 0, 0, 0, 0],
+#[0, 0, 0, 0, 0],
+#[0, 0, 0, 0, 0],
+# [0, 0, 1, 0, 0]]
 
 n = 70
 
 LEVEL_MAP = []
-for i in range(0,n):
+for i in range(0, n):
     LEVEL_MAP.append([])
-    for j in range(0,n):
+    for j in range(0, n):
         if j == 0 or j == (n-1) or i == 0 or i == (n-1):
             LEVEL_MAP[i].append(2)
         else:
@@ -24,8 +25,13 @@ for i in range(0,n):
 
 
 LEVEL_MAP[int(n-n/5)][int(n/2)] = 1
-#print(LEVEL_MAP)
 
+for i in range(0,6):
+    x = randint(10,25)
+    y = randint(15,55)
+    LEVEL_MAP[int(x)][int(y)] = 3
+
+# print(LEVEL_MAP)
 
 
 CELL_SIZE = 10
@@ -52,7 +58,8 @@ def main():
     game_loop = GameLoop(level, renderer, event_queue, clock, CELL_SIZE)
 
     pygame.init()
-    game_loop.start()  
+    game_loop.start()
+
 
 if __name__ == "__main__":
     main()

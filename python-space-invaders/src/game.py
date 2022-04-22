@@ -13,18 +13,19 @@ from clock import Clock
 # [0, 0, 1, 0, 0]]
 
 N = 70
+W = 110
 
 LEVEL_MAP = []
 for i in range(0, N):
     LEVEL_MAP.append([])
-    for j in range(0, N):
-        if j == 0 or j == (N-1) or i == 0 or i == (N-1):
+    for j in range(0, W):
+        if j == 0 or j == (W-1) or i == 0 or i == (N-1):
             LEVEL_MAP[i].append(2)
         else:
             LEVEL_MAP[i].append(0)
 
 
-LEVEL_MAP[int(N-N/5)][int(N/2)] = 1
+LEVEL_MAP[int(N-N/5)][int(W/2)] = 1
 
 for i in range(0, 6):
     x = randint(10, 25)
@@ -35,7 +36,6 @@ for i in range(0, 6):
 
 
 CELL_SIZE = 10
-
 
 def main():
     height = len(LEVEL_MAP)

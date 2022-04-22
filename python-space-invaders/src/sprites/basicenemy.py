@@ -9,13 +9,18 @@ dirname = os.path.dirname(__file__)
 
 
 class Basicenemy(pygame.sprite.Sprite):
-    def __init__(self, x_coord=0, y_coord=0):
+    def __init__(self, x_coord=0, y_coord=0, type = 1):
         # constructor call
         super().__init__()
-
+        #type
+        self.type = type
         # getting the image for the ship
-        self.image = pygame.image.load(
-            os.path.join(dirname, "..", "assets", "basicenemy.png"))
+        if self.type == 1:
+            self.image = pygame.image.load(
+                os.path.join(dirname, "..", "assets", "basicenemy.png"))
+        if self.type == 2:
+            self.image = pygame.image.load(
+                os.path.join(dirname, "..", "assets", "basicenemy2.png"))
         # rectacular shape (50x50)
         self.rect = self.image.get_rect()
         # for fire cooldown
@@ -24,12 +29,19 @@ class Basicenemy(pygame.sprite.Sprite):
         # starting x- and y-coordinates
         self.rect.x = x_coord
         self.rect.y = y_coord
-        self.movedir = choice([-10, -9, -8, -7, -6, -5, 5, 6, 7, 8, 9, 10])/10
+        if self.type == 1:
+            self.movespeed_x = choice([-2, -1, 1, 2])
+            self.movespeed_y = 0
+        if self.type == 2:
+            self.movespeed_x = choice([-2, -1, 1, 2])
+            self.movespeed_y = choice([-1, 1])
 
     def give_coords(self):
         return (self.rect.x, self.rect.y)
 
     def can_shoot(self, current_time):
+        if self.type == 2:
+            return False
         new_timer = randint(1, 10)*4000
         return current_time - self.previous_shot_time >= new_timer
 

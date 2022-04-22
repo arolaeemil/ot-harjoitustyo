@@ -24,6 +24,15 @@ class Spaceship(pygame.sprite.Sprite):
         self.rect.y = y_coord
         self.health = 5
 
+        self.shootsoundpath1 = os.path.join(
+            dirname, "..", "assets", "piu.wav")
+        
+        self.shootsoundpath2 = os.path.join(
+            dirname, "..", "assets", "pum.wav")
+
+        self.shootsoundpath3 = os.path.join(
+            dirname, "..", "assets", "pam.wav")
+
     def give_coords(self):
         return (self.rect.x, self.rect.y)
 

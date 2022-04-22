@@ -8,13 +8,22 @@ dirname = os.path.dirname(__file__)
 
 
 class Explosion(pygame.sprite.Sprite):
-    def __init__(self, x_coord=0, y_coord=0, current_time=0):
+    def __init__(self, x_coord=0, y_coord=0, current_time=0, type=1):
         # constructor call
         super().__init__()
 
+        self.type = type
+
         # getting the image for the ship
-        self.image = pygame.image.load(
-            os.path.join(dirname, "..", "assets", "explosion.png"))
+        if self.type == 1: 
+            self.image = pygame.image.load(
+                os.path.join(dirname, "..", "assets", "explosion.png"))
+        if self.type == 2:
+            self.image = pygame.image.load(
+                os.path.join(dirname, "..", "assets", "portal.png"))
+        if self.type == 3:
+            self.image = pygame.image.load(
+                os.path.join(dirname, "..", "assets", "blob_exp.png"))
         # rectacular shape (50x50)
         self.rect = self.image.get_rect()
         # for fire cooldown

@@ -27,7 +27,7 @@ class Level:
         self.score = 0
         #chance the value of the sound_on to 1 if you want to enjoy simple sounds. 
         #The automated tests do not work with sounds at the moment.
-        self.sound_on = 0
+        self.sound_on = 1
 
         self._initialize_sprites(level_map)
 

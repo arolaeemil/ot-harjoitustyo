@@ -28,3 +28,7 @@ Mietitty miten vihollisten spawnaus tullaan tekemään ja toteutettu se. Lisätt
 **25.4**
 Yhteensä 4 tuntia.
 Laajennettu testejä ja hiouttu lisättyjä ominaisuuksia. Testeissä ongelma äänien mukaanotossa, saatu toimimaan kun ajaa pytest VSC:llä. Ei kuitenkaan siten että toimisi taskina WLS kanssa. Päädytty ratkaisuun, jossa äänet voi poistaa käytöstä muuttamalla levelin sounds parametriä, jotta testit saadaan toimimaan. Päänvaivaa aiheutti myös miten saada input komentojen oikeellisuus testattua pytestillä. Tähän ei saatu ratkaisua.
+
+Laskettujen tuntien lisäksi varmaankin yhteensä ainakin 10 tuntia "tappelua" Ubuntu for windowsin, windows 10 ja laitoksen koneiden saamiseksi kaikki olemaan sitä mieltä että kaikki on ok.
+
+**Summa: 28h + (10h)**

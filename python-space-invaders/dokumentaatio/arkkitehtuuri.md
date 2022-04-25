@@ -21,10 +21,11 @@ Pelin käynnistää ja alustaa luokka game ja pelisilmukkana toimii luokka gamel
   blob "*" -- "1" level
   blocker "*" -- "1" level
   explosion "*" -- "1" level
+
 ```
 
 Huomioita luokista:
 
-Spritejä ovat basicenemy, spaceship, shot, blob, blocker, explosion.
+Spritejä ovat basicenemy, spaceship, shot, blob, blocker, explosion. Basicenemyjä voi luoda kahta erilaista tyyppiä.
 Spaceschip luokka toimii pelaajan ohjaamana aluksena, viholliset edustavat luokkaa basicenemy.
-Pelaajan ammukset kuvataan luokalla shot ja vihollisten ammukset luokalla blob. Blocker luokka muodostaa alueen, jolle muut objektit eivät voi mennä, tällä hetkellä kentän reunat. Explosion on tällä hetkellä puhtaasti graafinen efekti.
+Pelaajan ammukset kuvataan luokalla shot ja vihollisten ammukset luokalla blob. Blocker luokka muodostaa alueen, jolle muut objektit eivät voi mennä, tällä hetkellä kentän reunat. Explosion on tällä hetkellä puhtaasti graafinen efekti. Explosion luokka huolehtii myös blobien räjähdyksestä ja portaaliksi nimetyn efektin syntymisestä kun vihollinen syntyy. 

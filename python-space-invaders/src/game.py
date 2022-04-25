@@ -59,7 +59,7 @@ def main():
     game_loop = GameLoop(level, renderer, event_queue, clock, CELL_SIZE)
 
     pygame.init()
-    pygame.mixer.init()
+    #pygame.mixer.init()
     game_loop.start()
 
 

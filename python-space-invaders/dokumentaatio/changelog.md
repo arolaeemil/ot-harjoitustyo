@@ -36,7 +36,7 @@ Lisätty spawnaustoiminto. Vihollisia tulee lisää jos niitä on jäljellä lii
 
 Lisätty pisteidenlasku tekstitiedostoon. Peli hakee lopuksi edellisen parhaan tuloksen tai kertoo uudesta parhaasta tuloksesta.
 
-Lisätty hyvin yksinkertaiset ääniefektit ampumiseen ja osumiin. Nämä eivät vielä toimi testien kanssa taskien kautta, joten laitettu mahdollisuus poistaa ne levelin self.sounds = 0/1 avulla. Jos haluaa ääniä pitää vaihtaa arvo.
+Lisätty hyvin yksinkertaiset ääniefektit ampumiseen ja osumiin. Nämä eivät vielä toimi testien kanssa taskien kautta eivätkä kaikilla laitteistolla, joten ne on alustavasti asetettu pois käytöstä. Lisää tietoa README:ssa.
 
 Lisätty graafisia efektejä, uudet viholliset spawnaavat "portaaleista." Nyt myös vihollisten ammukset räjähtävät osuessaan pelaajaan.
 

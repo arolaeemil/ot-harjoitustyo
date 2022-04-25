@@ -1,4 +1,6 @@
+import os
 import unittest
+#import pygame
 from random import randint
 from level import Level
 from sprites.basicenemy import Basicenemy
@@ -8,13 +10,13 @@ from sprites.blob import Blob
 # test map
 #n = 100
 #LEVEL_MAP = []
-#for i in range(0, n):
-    #LEVEL_MAP.append([])
-    #for j in range(0, n):
-        #if j == 0 or j == (n-1) or i == 0 or i == (n-1):
-            #LEVEL_MAP[i].append(2)
-        #else:
-            #LEVEL_MAP[i].append(0)
+# for i in range(0, n):
+# LEVEL_MAP.append([])
+# for j in range(0, n):
+# if j == 0 or j == (n-1) or i == 0 or i == (n-1):
+# LEVEL_MAP[i].append(2)
+# else:
+# LEVEL_MAP[i].append(0)
 #LEVEL_MAP[5][5] = 1
 
 CELL_SIZE = 10
@@ -35,11 +37,13 @@ LEVEL_MAP[5][5] = 1
 
 LEVEL_MAP[10][10] = 3
 
-######### test map creation ends
+# test map creation ends
+
 
 class TestLevel(unittest.TestCase):
     def setUp(self):
         self.level = Level(LEVEL_MAP, CELL_SIZE)
+        #pygame.mixer.init()
         # pass
 
     def assert_coordinates_equal(self, sprite, x, y):
@@ -112,8 +116,34 @@ class TestLevel(unittest.TestCase):
         self.assertEqual(len(self.level.explosions), 1)
 
     def test_player_can_get_hit(self):
-        #current_time = 10000
+        current_time = 10000
         self.level.blobs.add(Blob(5*CELL_SIZE, 5*CELL_SIZE))
-        self.level.ship_got_hit()
+        self.level.ship_got_hit(current_time)
         self.assertEqual(self.level.ship.health, 4)
         self.assertEqual(len(self.level.blobs), 0)
+
+    def test_enemies_can_spawn(self):
+        current_time = 10000
+        for i in range(0,20):
+            self.level.spawn_enemies(current_time)
+        self.assertEqual(len(self.level.enemies), 10)
+    
+    def test_enemies_spawn_from_portals_and_portals_fade(self):
+        current_time = 10000
+        for i in range(0,10):
+            self.level.spawn_enemies(current_time)
+        self.assertEqual(len(self.level.portals), 9)
+        current_time = 20000
+        self.level.update(current_time)
+        self.assertEqual(len(self.level.portals), 0)
+
+    def test_score_is_saved(self):
+        self.level.score = 20
+        self.level.save_score()
+        rel_path = os.path.join("src", "record.txt")
+        with open(rel_path, "r") as file:
+            for line in file:
+                pass
+            last_line = line
+        self.assertEqual(int(last_line), 20)
+

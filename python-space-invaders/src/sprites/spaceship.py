@@ -26,7 +26,7 @@ class Spaceship(pygame.sprite.Sprite):
 
         self.shootsoundpath1 = os.path.join(
             dirname, "..", "assets", "piu.wav")
-        
+
         self.shootsoundpath2 = os.path.join(
             dirname, "..", "assets", "pum.wav")
 

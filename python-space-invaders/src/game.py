@@ -37,6 +37,7 @@ for i in range(0, 6):
 
 CELL_SIZE = 10
 
+
 def main():
     height = len(LEVEL_MAP)
     width = len(LEVEL_MAP[0])

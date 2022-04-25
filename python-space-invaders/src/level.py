@@ -1,5 +1,6 @@
-import pygame
+import os
 from random import randint, choice
+import pygame
 from sprites.spaceship import Spaceship
 #from sprites.space import Space
 from sprites.shot import Shot
@@ -24,6 +25,7 @@ class Level:
         self.blobs = pygame.sprite.Group()
         self.gamespeed = 1
         self.score = 0
+        self.sound_on = 0
 
         self._initialize_sprites(level_map)
 
@@ -106,7 +108,7 @@ class Level:
                     pygame.sprite.Sprite.kill(port)
                     # self.explosions.remove(exp)
                     # self.all_sprites.remove(exp)
-        
+
         self.spawn_enemies(current_time)
 
     def move_ship(self, diff_x=0, diff_y=0):
@@ -120,8 +122,9 @@ class Level:
     def shoot(self, ship, current_time):
         if not ship.can_shoot(current_time):
             return False
-        sound = pygame.mixer.Sound(self.ship.shootsoundpath1)
-        pygame.mixer.Sound.play(sound)
+        if self.sound_on == 1:
+            sound = pygame.mixer.Sound(self.ship.shootsoundpath1)
+            pygame.mixer.Sound.play(sound)
         ship.previous_shot_time = current_time
         coords = ship.give_coords()
         new_shot = Shot(coords[0], coords[1])
@@ -132,20 +135,22 @@ class Level:
     def ship_got_hit(self, current_time):
         is_hit = pygame.sprite.spritecollide(self.ship, self.blobs, True)
         if is_hit:
-            sound = pygame.mixer.Sound(self.ship.shootsoundpath2)
-            pygame.mixer.Sound.play(sound)
+            if self.sound_on == 1:
+                sound = pygame.mixer.Sound(self.ship.shootsoundpath2)
+                pygame.mixer.Sound.play(sound)
             coord = self.ship.give_coords()
             new_exp = Explosion(coord[0], coord[1], current_time, 3)
             self.explosions.add(new_exp)
             self.all_sprites.add(self.explosions)
             self.ship.health = self.ship.health - 1
-            print("U GOT HIT")
+            #print("U GOT HIT")
         is_collide = pygame.sprite.spritecollide(self.ship, self.enemies, True)
         if is_collide:
-            sound = pygame.mixer.Sound(self.ship.shootsoundpath2)
-            pygame.mixer.Sound.play(sound)
+            if self.sound_on == 1:
+                sound = pygame.mixer.Sound(self.ship.shootsoundpath2)
+                pygame.mixer.Sound.play(sound)
             self.ship.health = self.ship.health - 1
-            print("U GOT HIT")
+            #print("U GOT HIT")
             coord = self.ship.give_coords()
             new_exp = Explosion(coord[0], coord[1], current_time)
             self.explosions.add(new_exp)
@@ -165,9 +170,9 @@ class Level:
     def draw_hp_bar(self, display):
         location = (self.ship.rect.x, self.ship.rect.y, 0, 0)
         pygame.draw.rect(display, (255, 0, 0),
-                        (location[0], location[1] - 20, 50, 15))
+                         (location[0], location[1] - 20, 50, 15))
         pygame.draw.rect(display, (0, 128, 0),
-                        (location[0], location[1] - 20, 50 - (10 * (5 - self.ship.health)), 15))
+                         (location[0], location[1] - 20, 50 - (10 * (5 - self.ship.health)), 15))
 
     def draw_score(self, display):
         location = pygame.display.get_window_size()
@@ -177,7 +182,8 @@ class Level:
         text = font.render(str(self.score), True, (255, 0, 0))
         wid = 100
         height = 50
-        pygame.draw.rect(display, (0, 0, 255), (x_coord-10, y_coord-10, wid+20, height+20))
+        pygame.draw.rect(display, (0, 0, 255),
+                         (x_coord-10, y_coord-10, wid+20, height+20))
         pygame.draw.rect(display, (0, 0, 0), (x_coord, y_coord, wid, height))
         display.blit(text, (x_coord+(wid/10), y_coord))
 
@@ -186,17 +192,17 @@ class Level:
     def move_enemy(self, enemy, diff_x=0, diff_y=0):
         diff_x = 2*self.gamespeed
         diff_y = 2*self.gamespeed
-        #for enemy in self.enemies:
-            #print([enemy.movespeed_x, enemy.movespeed_y])
+        # for enemy in self.enemies:
+        #print([enemy.movespeed_x, enemy.movespeed_y])
         if not self.enemy_can_move_x(enemy, enemy.movespeed_x*diff_x):
             enemy.movespeed_x = enemy.movespeed_x*(-1)
-                #return
+            # return
         if not self.enemy_can_move_y(enemy, enemy.movespeed_y*diff_y):
             enemy.movespeed_y = enemy.movespeed_y*(-1)
-                #return
-            #print(enemy.type)
+            # return
+            # print(enemy.what_type)
         enemy.rect.move_ip(enemy.movespeed_x*diff_x, enemy.movespeed_y*diff_y)
-            #enemy.rect.move_ip(1, 1)
+        #enemy.rect.move_ip(1, 1)
 
     def enemy_can_move_x(self, enemy, diff_x):
         # move enemy to new position
@@ -241,8 +247,9 @@ class Level:
                     coords.append(enemy.give_coords())
                     #pygame.sprite.Sprite.remove(e, self.all_sprites, self.enemies)
                     pygame.sprite.Sprite.kill(enemy)
-                    sound = pygame.mixer.Sound(self.ship.shootsoundpath3)
-                    pygame.mixer.Sound.play(sound)
+                    if self.sound_on == 1:
+                        sound = pygame.mixer.Sound(self.ship.shootsoundpath3)
+                        pygame.mixer.Sound.play(sound)
                     self.score = self.score + 1
                     # self.enemies.remove(e)
             # self.all_sprites.remove(self.enemy)
@@ -275,22 +282,28 @@ class Level:
         self.all_sprites.add(self.blobs)
         return True
 
-    #enemy spawning
+    # enemy spawning
     def spawn_enemies(self, current_time):
-        choose_type = choice([1,2])
+        choose_type = choice([1, 2])
         x_coord = randint(10, 55)
         y_coord = randint(10, 25)
         normalized_x = x_coord * self.cell_size
         normalized_y = y_coord * self.cell_size
-        #print(len(self.enemies))
+        # print(len(self.enemies))
         if len(self.enemies) < 10:
-            self.enemies.add(Basicenemy(normalized_x, normalized_y,choose_type))
-            self.portals.add(Explosion(normalized_x, normalized_y,current_time,2))
+            self.enemies.add(Basicenemy(
+                normalized_x, normalized_y, choose_type))
+            self.portals.add(
+                Explosion(normalized_x, normalized_y, current_time, 2))
             self.all_sprites.add(self.portals, self.enemies)
 
-    
-    #top score
+    # top score
+
     def save_score(self):
-        file = open("record.txt","a")
-        file.write(str(self.score))
-        file.write("\n")
+        script_path = os.path.dirname(os.path.abspath(__file__))
+        rel_path = "record.txt"
+        abs_file_path = os.path.join(script_path, rel_path)
+        #print(abs_file_path)
+        with open(abs_file_path, "a+", encoding="utf-8") as file:
+            file.write(str(self.score))
+            file.write("\n")

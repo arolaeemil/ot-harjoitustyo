@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa projektin viimeisimmän [releasen] (https://github.com/arolaeemil/ot-harjoitustyo/releases) lähdekoodi..
+Lataa projektin viimeisimmän [releasen](https://github.com/arolaeemil/ot-harjoitustyo/releases) lähdekoodi.
 
 ## Ohjelman käynnistys
 

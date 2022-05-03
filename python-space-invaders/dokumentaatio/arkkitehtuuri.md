@@ -51,7 +51,7 @@ Explosion on tällä hetkellä puhtaasti graafinen efekti. Explosion-luokka huol
   Ship -->> Level: True
   Level ->> Ship: give_coords(), ship.previous_shot_time = current_time
   Ship -->> Level: coordinates(x,y)
-  Level ->> level.shots.add(Shot())
+  Level ->> Level: level.shots.add(Shot())
   Level ->> Shot: Shot(coords[0], coords[1])
   Shot -->> Level: Shot
   

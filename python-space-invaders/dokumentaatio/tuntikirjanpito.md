@@ -37,4 +37,4 @@ Yhteensä 4 tuntia. Tehty sekvenssikaavio ammuksen syntymisestä ja yritetty lis
 
 Laskettujen tuntien lisäksi varmaankin yhteensä ainakin 10 tuntia "tappelua" Ubuntu for windowsin, windows 10 ja laitoksen koneiden saamiseksi kaikki olemaan sitä mieltä että kaikki on ok.
 
-**Summa: 28h + (10h)**
+**Summa: 34 + (10h)**

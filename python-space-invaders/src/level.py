@@ -11,7 +11,8 @@ from sprites.explosion import Explosion
 from sprites.boss import Boss
 
 class Level:
-    """This class is responsible for the most of the basic functionality considering the behaviour of different objects
+    """This class is responsible for the most of the basic
+    functionality considering the behaviour of different objects
     """
     def __init__(self, level_map, cell_size):
         self.cell_size = cell_size
@@ -29,15 +30,14 @@ class Level:
         self.gamespeed = 1
         self.score = 0
         self.bosscounter = 0
-        #chance the value of the sound_on to 1 if you want to enjoy simple sounds. 
+        #chance the value of the sound_on to 1 if you want to enjoy simple sounds.
         #The automated tests do not work with sounds at the moment.
         self.sound_on = 0
 
         self._initialize_sprites(level_map)
 
     def _initialize_sprites(self, level_map):
-        """initialised the sprite objects based on level map
-
+        """initialises the sprite objects based on level map
         Args:
            level_map, contains starting positions of objects
         """
@@ -274,7 +274,8 @@ class Level:
         return can_move
 
     def enemy_got_hit(self, current_time):
-        """removes enemies which get hit by a projectile. Also removes the projectile and adds a graphical effect.
+        """removes enemies which get hit by a projectile.
+        Also removes the projectile and adds a graphical effect.
         """
         colliding_shots = []
         colliding_enemies = []
@@ -306,7 +307,8 @@ class Level:
                 self.all_sprites.add(self.explosions)
 
     def boss_got_hit(self, current_time):
-        """removes projectiles which hit boss. Also removes hp from boss and adds a graphical effect.
+        """removes projectiles which hit boss.
+        Also removes hp from boss and adds a graphical effect.
         """
         colliding_shots = []
         colliding_bosses = []
@@ -319,7 +321,7 @@ class Level:
             colliding_shots.append(apu)
         if colliding_shots:
             for bosses in colliding_bosses:
-                for boss in bosses:  
+                for boss in bosses:
                     boss.remove_hp(1)
                     coords.append(boss.give_coords())
                     if boss.is_kill() is True:
@@ -364,7 +366,8 @@ class Level:
         return True
 
     def spawn_enemies(self, current_time):
-        """spawn new enemies if there is not enough of them. Also makes a graphical effect on enemy spawn
+        """spawn new enemies if there is not enough of them.
+        Also makes a graphical effect on enemy spawn
         """
         choose_type = choice([1, 2])
         x_coord = randint(10, 55)
@@ -375,10 +378,9 @@ class Level:
         if len(self.enemies) < 5 and len(self.bosses) == 0:
             self.enemies.add(Basicenemy(
                 normalized_x, normalized_y, choose_type))
-            self.portals.add(
-                Explosion(normalized_x, normalized_y, current_time, 2))
+            self.portals.add(Explosion(normalized_x, normalized_y, current_time, 2))
             self.all_sprites.add(self.portals, self.enemies)
-    
+
     def spawn_boss(self, current_time):
         if self.bosscounter > 10 and len(self.bosses) == 0:
             start_x = 25*self.cell_size

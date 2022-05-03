@@ -18,19 +18,15 @@ class Boss(pygame.sprite.Sprite):
         super().__init__()
 
         self.what_type = what_type
-        self.hp = 5
-
+        self.health_points = 5
         if self.what_type == 1:
             self.image = pygame.image.load(
                 os.path.join(dirname, "..", "assets", "boss.png"))
         self.rect = self.image.get_rect()
-
-        # for cooldown
-        self.previous_move_time = 0
         self.previous_shot_time = 0
-        # starting x- and y-coordinates
-        self.rect.x = x_coord
+        self.previous_move_time = 0
         self.rect.y = y_coord
+        self.rect.x = x_coord
         if self.what_type == 1:
             self.movespeed_x = choice([-1,1])
             self.movespeed_y = 0
@@ -46,14 +42,14 @@ class Boss(pygame.sprite.Sprite):
         return current_time - self.previous_move_time >= 30
 
     def is_kill(self):
-        """return state of boss, contineus to live or dies 
+        """return state of boss, contineus to live or dies
         Returns:
             False if hp is still above value zero
             True if hp has reached value zero
         """
-        if self.hp <= 0:
+        if self.health_points <= 0:
             return True
         return False
-    
+
     def remove_hp(self, amount):
-        self.hp = self.hp - amount
+        self.health_points = self.health_points - amount

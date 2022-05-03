@@ -9,11 +9,13 @@ dirname = os.path.dirname(__file__)
 
 class Basicenemy(pygame.sprite.Sprite):
     def __init__(self, x_coord=0, y_coord=0, what_type=1):
-        """normal enemies which spawn in the game, there are two types currently. Movespeeds have random variation.
+        """normal enemies which spawn in the game, there are two types currently.
+        Movespeeds have random variation.
         Args:
             x_coord (int, optional): starting x-coordinate
             y_coord (int, optional): starting y-coordinate
-            what_type (int, optional): can be 1 or 2. Type 2 enemy move differently but doesnt shoot blobs.
+            what_type (int, optional): can be 1 or 2.
+            Type 2 enemy move differently but doesnt shoot blobs.
         """
         super().__init__()
 

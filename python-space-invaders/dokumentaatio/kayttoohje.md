@@ -9,16 +9,9 @@ Ennen ohjelman käyttöä asenna riippuvuudet käyttämällä komentoa:
 ```bash
 poetry install
 ```
-
-Tämän jälkeen voi alustuksen suorittaa komennolla:
-
-```bash
-poetry run invoke build
-```
-
 Nyt ohjelman käynnistys onnistuu komennolla:
 
-```
+```bash
 poetry run invoke start
 ```
 

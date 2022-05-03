@@ -40,3 +40,6 @@ Lisätty hyvin yksinkertaiset ääniefektit ampumiseen ja osumiin. Nämä eivät
 
 Lisätty graafisia efektejä, uudet viholliset spawnaavat "portaaleista." Nyt myös vihollisten ammukset räjähtävät osuessaan pelaajaan.
 
+**Viikko 6**
+
+Lisätty ajoittainen pomovastustaja. Pomovastustajalla nyt oma luokka, oma kuva ja omat syntyportaali ja kuolemisräjähdys. Pomo liikkuu hitaasti ja kestää useita osumia. Normaalivihollisten lisääntyminen menee tauolle pomon ollessa elossa. Pomon ajoittainen olemassaolo vaikuttanut hieman muihin toimintoihin, jotta ruutu ei ylitäyty vihollisista ja vaikkeustaso sellainen että pomoja pääsee kohtaamaan. Peli tällä hetkellä kuitenkin loputon, pomoja syntyy uusia.

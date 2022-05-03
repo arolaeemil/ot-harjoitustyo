@@ -18,6 +18,8 @@ class Renderer:
         pygame.display.update()
 
     def game_over(self):
+        """creates the game over screen with score
+        """
         tubel = pygame.display.get_window_size()
         font = pygame.font.SysFont("Arial", 48)
         text = font.render("GAME OVER", True, (255, 0, 0))
@@ -34,9 +36,6 @@ class Renderer:
             scores = [int(i) for i in lines]
             score = scores[len(lines)-1]
             best = max(scores)
-            #score = int(score)
-            #best = int(best)
-            # print(lines)
         if score < best:
             scoretext = font.render(
                 "score: " + str(score) + ", best score this far is " + str(best), True, (255, 0, 0))

@@ -1,25 +1,24 @@
 import os
 import pygame
 
-# path to get the file
 dirname = os.path.dirname(__file__)
-
-# sprite class is inherited
-
 
 class Spaceship(pygame.sprite.Sprite):
     def __init__(self, x_coord=0, y_coord=0):
-        # constructor call
+        """player ship, also holds paths to sounds related to its own actions.
+        Args:
+            x_coord (int, optional): starting x-coordinate
+            y_coord (int, optional): starting y-coordinate
+        """
         super().__init__()
 
-        # getting the image for the ship
         self.image = pygame.image.load(
             os.path.join(dirname, "..", "assets", "ship.png"))
-        # rectacular shape (50x50)
+
         self.rect = self.image.get_rect()
-        # for fire cooldown
+
         self.previous_shot_time = 0
-        # starting x- and y-coordinates
+
         self.rect.x = x_coord
         self.rect.y = y_coord
         self.health = 5

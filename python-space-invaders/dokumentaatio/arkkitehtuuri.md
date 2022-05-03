@@ -8,7 +8,7 @@ Pelin käynnistää ja alustaa luokka game ja pelisilmukkana toimii luokka gamel
 ## Luokkakaavio
 ```mermaid
  classDiagram
-	game "1" -- "1" gameloop
+  game "1" -- "1" gameloop
   level "1" -- "1" gameloop
   level "1" -- "1" game
   renderer "1" -- "1"game
@@ -31,3 +31,28 @@ Basicenemyjä luodaan kahta erilaista tyyppiä ja ne edustavat pelin vihollisia.
 Spaceship luokka toimii pelaajan ohjaamana aluksena.
 Pelaajan ammukset kuvataan luokalla shot ja vihollisten ammukset luokalla blob. Blocker luokka muodostaa alueen, jolle muut objektit eivät voi mennä, tällä hetkellä kentän reunat. 
 Explosion on tällä hetkellä puhtaasti graafinen efekti. Explosion-luokka huolehtii myös blobien räjähdyksestä ja portaaliksi nimetyn efektin syntymisestä kun vihollinen syntyy. 
+
+##Sekvenssikaavio ammuksen syntymisestä, operaation onnistuessa##
+
+```mermaid
+ sequenceDiagram
+  participant Player
+  participant Gameloop
+  participant Level
+  participant Clock
+  participant Spaceship
+  participant Shot
+
+  Player ->> Gameloop: Press "spacebar", Gameloop.shoot = True
+  Gameloop ->> Clock: get_ticks()
+  Clock -->> Gameloop: time
+  Gameloop ->> Level: Level.shoot(level.ship, time)
+  Level ->> Ship: Ship.can_shoot(current_time)
+  Ship -->> Level: True
+  Level ->> Ship: give_coords(), ship.previous_shot_time = current_time
+  Ship -->> Level: coordinates(x,y)
+  Level ->> level.shots.add(Shot())
+  Level ->> Shot: Shot(coords[0], coords[1])
+  Shot -->> Level: Shot
+  
+```

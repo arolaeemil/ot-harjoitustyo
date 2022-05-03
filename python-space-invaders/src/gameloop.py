@@ -16,19 +16,18 @@ class GameLoop:
         self.shoot = False
 
     def start(self):
+        """this method handles the gaming events in a loop
+        """
         while True:
             if self._handle_events() is False:
                 break
 
-            # time
             current_time = self._clock.get_ticks()
             self._level.update(current_time)
 
             game_over = self._level.ship_is_kill()
-            # print(game_over)
             if game_over is True:
                 self._renderer.game_over()
-                # break
                 continue
 
             if self.shoot is True:
@@ -45,15 +44,16 @@ class GameLoop:
 
             self._render()
 
-            # framerate is n
             self._clock.tick(60)
 
     def _handle_events(self):
-        #pygame.key.set_repeat(1, 100)
+        """This method handles the keyboard input
+        Returns:
+            False when terminating the gaming session
+        """
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RIGHT:
-                    # print("test")
                     self.right = True
                 if event.key == pygame.K_LEFT:
                     self.left = True

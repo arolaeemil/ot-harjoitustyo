@@ -39,7 +39,6 @@ LEVEL_MAP[10][10] = 3
 
 # test map creation ends
 
-
 class TestLevel(unittest.TestCase):
     def setUp(self):
         self.level = Level(LEVEL_MAP, CELL_SIZE)
@@ -126,13 +125,13 @@ class TestLevel(unittest.TestCase):
         current_time = 10000
         for i in range(0,20):
             self.level.spawn_enemies(current_time)
-        self.assertEqual(len(self.level.enemies), 10)
+        self.assertEqual(len(self.level.enemies), 5)
     
     def test_enemies_spawn_from_portals_and_portals_fade(self):
         current_time = 10000
         for i in range(0,10):
             self.level.spawn_enemies(current_time)
-        self.assertEqual(len(self.level.portals), 9)
+        self.assertEqual(len(self.level.portals), 4)
         current_time = 20000
         self.level.update(current_time)
         self.assertEqual(len(self.level.portals), 0)
@@ -147,3 +146,19 @@ class TestLevel(unittest.TestCase):
             last_line = line
         self.assertEqual(int(last_line), 20)
 
+    def test_boss_can_spawn(self):
+        self.level.bosscounter = 15
+        current_time = 10000
+        self.level.spawn_boss(current_time)
+        self.assertEqual(len(self.level.bosses), 1)
+
+    def test_boss_can_die(self):
+        self.level.bosscounter = 15
+        current_time = 10000
+        self.level.spawn_boss(current_time)
+        for boss in self.level.bosses:
+            boss.remove_hp(10)
+            self.level.shots.add(Shot(25*CELL_SIZE, 10*CELL_SIZE))
+            self.assertEqual(boss.is_kill(), True)
+        self.level.boss_got_hit(current_time)
+        self.assertEqual(len(self.level.bosses), 0)

@@ -7,11 +7,6 @@ from event_queue import EventQueue
 from renderer import Renderer
 from clock import Clock
 
-# LEVEL_MAP = [[0, 0, 0, 0, 0],
-#[0, 0, 0, 0, 0],
-#[0, 0, 0, 0, 0],
-# [0, 0, 1, 0, 0]]
-
 N = 70
 W = 110
 
@@ -31,8 +26,6 @@ for i in range(0, 6):
     x = randint(10, 25)
     y = randint(15, 55)
     LEVEL_MAP[int(x)][int(y)] = 3
-
-# print(LEVEL_MAP)
 
 
 CELL_SIZE = 10

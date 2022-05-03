@@ -9,9 +9,14 @@ dirname = os.path.dirname(__file__)
 
 class Explosion(pygame.sprite.Sprite):
     def __init__(self, x_coord=0, y_coord=0, current_time=0, what_type=1):
-        # constructor call
+        """purely graphical effects with a fade timer, can give several types for different pictures
+        Args:
+            x_coord (int, optional): x_coordinate
+            y_coord (int, optional): y_coordinate
+            current_time (int, optional): birth time is given
+            what_type (int, optional): chosen type
+        """
         super().__init__()
-
         self.what_type = what_type
 
         # getting the image for the ship
@@ -24,6 +29,12 @@ class Explosion(pygame.sprite.Sprite):
         if self.what_type == 3:
             self.image = pygame.image.load(
                 os.path.join(dirname, "..", "assets", "blob_exp.png"))
+        if self.what_type == 4:
+            self.image = pygame.image.load(
+            os.path.join(dirname, "..", "assets", "boss_death.png"))
+        if self.what_type == 5:
+            self.image = pygame.image.load(
+                os.path.join(dirname, "..", "assets", "boss_portal.png"))
         # rectacular shape (50x50)
         self.rect = self.image.get_rect()
         # for fire cooldown

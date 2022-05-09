@@ -7,13 +7,11 @@ Yleistä suunnittelua koskien projektin ohjelmoinnin aloittamista.
 
 
 **2.4**
-
 Yhteensä 7 tuntia.
 Ohjelmoinnin varsinainen aloitus. Toteutettu perustoiminnallisuus ilman vihollisia. Pelaajalla nyt alus, joka voi liikkua ja ampua, ei voi poistua kentältä.
 Säätämistä gitin, poetryn, invoken jne. kanssa. Koska Ubuntu for Windows niin ongelmia oli aika paljon saada halutut asiat toimimaan projektin kanssa.
 
 **5.4**
-
 Yhteensä 1 tuntia.
 Dokumenttien kuntoon laittoa ja testausta etätyöaseman kautta. Tässä ongelmia poetryn ja pythonin versioiden kanssa. Lopulta saatu toimimaan siten, että luotan siihen että toimii kun tarkastaja yrittää.
 
@@ -36,7 +34,6 @@ Yhteensä 2 tuntia. Tehty käyttöohje ja aloitettu koodin docstring dokumentaat
 Yhteensä 4 tuntia. Tehty sekvenssikaavio ammuksen syntymisestä ja yritetty lisätä testauskattavuutta. Luotu pomovastustaja ja siihen liittyvät toiminnot.
 
 **9.5**
-
 Yhteensä 1 tunti. Hiouttu dokumentaatiota paremmaksi, korjattu mahdollisia virheitä/puutteita.
 
 Laskettujen tuntien lisäksi varmaankin yhteensä ainakin 10 tuntia "tappelua" Ubuntu for windowsin, windows 10 ja laitoksen koneiden saamiseksi kaikki olemaan sitä mieltä että kaikki on ok.

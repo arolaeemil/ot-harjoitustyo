@@ -16,6 +16,7 @@ Pelin käynnistää ja alustaa luokka game ja pelisilmukkana toimii luokka gamel
   eventqueu "1" -- "1" game
   
   basicenemy "6" -- "1" level
+  boss "1" -- "1" level
   spaceship "1" -- "1" level
   shot "*" -- "1" level
   blob "*" -- "1" level

@@ -15,6 +15,8 @@ Nyt ohjelman käynnistys onnistuu komennolla:
 poetry run invoke start
 ```
 
+Mahdollisessa ongelmatilanteessa kannattaa yrittää suorittaa src/game.py, jos jokin estää edellisen komennon toiminnan. Pelin toiminta vaatii mahdollisuuden avata pygame-ikkuna.
+
 ## Pelin pelaaminen
 
 Alusta ohjataan käyttämällä nuolinäppäimiä. Alus kykenee ampumaan spacebarista. Iloisia pelihetkiä.

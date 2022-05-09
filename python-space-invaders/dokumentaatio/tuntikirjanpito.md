@@ -35,6 +35,10 @@ Yhteensä 2 tuntia. Tehty käyttöohje ja aloitettu koodin docstring dokumentaat
 **3.5**
 Yhteensä 4 tuntia. Tehty sekvenssikaavio ammuksen syntymisestä ja yritetty lisätä testauskattavuutta. Luotu pomovastustaja ja siihen liittyvät toiminnot.
 
+**9.5**
+
+Yhteensä 1 tunti. Hiouttu dokumentaatiota paremmaksi, korjattu mahdollisia virheitä/puutteita.
+
 Laskettujen tuntien lisäksi varmaankin yhteensä ainakin 10 tuntia "tappelua" Ubuntu for windowsin, windows 10 ja laitoksen koneiden saamiseksi kaikki olemaan sitä mieltä että kaikki on ok.
 
-**Summa: 34 + (10h)**
+**Summa: 35 + (10h)**

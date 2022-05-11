@@ -8,7 +8,7 @@ Myös manuaalisiä järjestelmätason testejä on suoritettu ohjelman halutunlai
 ### Sovelluslogiikka
 
 Luokan `level` toimintaa ja liki jokaista metodia testattiin sen varmistamiseksi, että pelin objektien toiminta on halutunlaista.
-Luokan `gameloop` toimintaa testattiin stub-komponenttien avulla.
+Luokan `gameloop` toimintaa testattiin stub-komponenttien avulla. Myös Luokan 'game' toimintaa testattiin jonkin verran.
 
 ### Sprite-luokat
 
@@ -16,9 +16,9 @@ Sprite-luokkien toimintaa testattiin levelin yhteydessä, sillä level vastaa sp
 
 ### Testauskattavuus
 
-Koko sovelluksen testauksen haaratumakattavuus on ??%.
+Koko sovelluksen testauksen haaratumakattavuus on 73%.
 
-KUVA TÄNNE
+![](./kuvat/coverage_kuva.PNG)
 
 ### Asennus ja konfigurointi
 
@@ -32,4 +32,4 @@ lupaamat toiminnallisuudet on käyty läpi testattessa.
 
 ### Sovelluksen mahdolliset ongelmat
 
-Äänien toimivuutta kaikissa laitteistoissa ei kyetä takaaman. Tämän johdosta jätetty mahdollisuus ottaa äänet halutessaan käyttöön ja estetty äänet ilman erillistä käyttöönottoa.
+Äänien toimivuutta kaikissa laitteistoissa ei kyetä takaaman. Tämän johdosta jätetty mahdollisuus ottaa äänet halutessaan käyttöön alkukyselyn kautta.

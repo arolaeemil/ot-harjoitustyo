@@ -40,9 +40,9 @@ Yhteensä 1 tunti. Hiouttu dokumentaatiota paremmaksi, korjattu mahdollisia virh
 Yhteensä 2 tuntia. Muutettu level-luokan koodia siten, että huomattavasti luettavampaa, päästy eroon isosta osasta massiivisen pitkiä
 metodeita ja copy-paste koodista, jota oli jäljellä. Parannettu myös dokumentaatiota.
 
-Laskettujen tuntien lisäksi varmaankin yhteensä ainakin 10 tuntia "tappelua" Ubuntu for windowsin, windows 10 ja laitoksen koneiden saamiseksi kaikki olemaan sitä mieltä että kaikki on ok.
-
 **11.5.**
 Yhteensä 5 tuntia. Testien säätämistä ja yleistä loppukuntoon saattamista.
+
+Laskettujen tuntien lisäksi varmaankin yhteensä ainakin 10 tuntia "tappelua" Ubuntu for windowsin, windows 10 ja laitoksen koneiden saamiseksi kaikki olemaan sitä mieltä että kaikki on ok.
 
 **Summa: 42 + (10h)**

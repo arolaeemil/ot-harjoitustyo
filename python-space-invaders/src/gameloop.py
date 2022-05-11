@@ -80,4 +80,6 @@ class GameLoop:
                 return False
 
     def _render(self):
+        """commands renderer to do its job
+        """
         self._renderer.render()

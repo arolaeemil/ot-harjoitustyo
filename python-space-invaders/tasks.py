@@ -3,15 +3,11 @@ from invoke import task
 
 @task
 def start(ctx):
-    #windows command line start, if wish to use windows uncomment this and comment the other start
-    #ctx.run("python src/game.py", pty=False)
     ctx.run("python3 src/game.py", pty=True)
 
 @task
 def test(ctx):
     ctx.run("pytest src", pty=True)
-
-
 
 @task
 def coverage(ctx):
@@ -29,3 +25,7 @@ def format(ctx):
 @task
 def lint(ctx):
     ctx.run("pylint src", pty=True)
+
+@task
+def build(cxt):
+    cxt.run("python3 src/database_make.py", pty=True)

@@ -47,3 +47,7 @@ Lisätty ajoittainen pomovastustaja. Pomovastustajalla nyt oma luokka, oma kuva 
 Normaalivihollisten lisääntyminen menee tauolle pomon ollessa elossa. Pomon ajoittainen olemassaolo vaikuttanut hieman muihin toimintoihin, jotta ruutu ei ylitäyty vihollisista ja vaikeustaso sellainen että pomoja pääsee kohtaamaan. 
 
 Peli tällä hetkellä kuitenkin loputon, pomoja syntyy uusia kriteerien täyttessä.
+
+**Viimeinen viikko**
+
+Lisätty alkukysely vaikeustasoa ja äänien päälläoloa varten. Muutettu huipputulosten hallinta tietokannaksi.

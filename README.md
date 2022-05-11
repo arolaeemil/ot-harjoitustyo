@@ -10,8 +10,8 @@ Peli on tarkoitettu toimivaksi Pythonin versiolla 3.8. Muut versiot saattavat to
 
 **Pelin valmistelu ja pelaaminen**
 
-Peli voidaan käynnistää Ubuntulla komentorivillä komennolla "poetry run invoke start". Ennen tätä on suoritettava "poetry install" ennen ensimmäistä käynnistystä riippuvuuksien asentamiseksi. Jos käynnistyksessä ilmenee ongelmia voi pelin yrittää käynnistää ajamalla src/game.py. Peliä varten avautuu pygame-ikkuna, jos tämän avaaminen ei ole mahdollista ei peliä voi pelata.
-Peliin on lisätty ääniominaisuuksia, mutta niitten toimintaa eri laitteistoilla ei voidaa taata, joten ne on poistettu käytöstä jaossa olevassa koodissa. Haluttaessa ääniominaisuudet peliin täytyy level.py -tiedoston parametri self.sound_on muuttaa arvoon 1 arvosta 0 ja mahdollisesti poistaa "#" game.py tiedoston pygame.mixer.init() kohdasta. Myöskään automaattitestit eivät tällä hetkellä tue ääniominaisuuksia. Äänien käyttöönottoa voi yrittää, mutta teknistä tukea tähän ei tällä hetkelle ole saatavilla.
+Ennen pelin pelaamista pitää pisteistä huolehtiva tietokanta tehdä komennolla "poetry run invoke build. Peli voidaan käynnistää Ubuntulla komentorivillä komennolla "poetry run invoke start". Ennen tätä on suoritettava "poetry install" ennen ensimmäistä käynnistystä riippuvuuksien asentamiseksi. Jos käynnistyksessä ilmenee ongelmia voi pelin yrittää käynnistää ajamalla src/game.py. Peliä varten avautuu pygame-ikkuna, jos tämän avaaminen ei ole mahdollista ei peliä voi pelata.
+Peliin on lisätty ääniominaisuuksia, mutta niitten toimintaa eri laitteistoilla ei voidaa taata. Haluttaessa ääniominaisuudet peliin voi ottaa käyttöön pelin aloituskyselyssä.
  
 **Dokumentaatio**
 

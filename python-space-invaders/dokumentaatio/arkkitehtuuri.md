@@ -14,7 +14,8 @@ Pelin käynnistää ja alustaa luokka game ja pelisilmukkana toimii luokka gamel
   renderer "1" -- "1"game
   clock "1" -- "1" game
   eventqueu "1" -- "1" game
-  
+  high_scorehandler "1" -- "1" level  
+
   basicenemy "6" -- "1" level
   boss "1" -- "1" level
   spaceship "1" -- "1" level
@@ -32,6 +33,7 @@ Basicenemyjä luodaan kahta erilaista tyyppiä ja ne edustavat pelin vihollisia.
 Spaceship luokka toimii pelaajan ohjaamana aluksena.
 Pelaajan ammukset kuvataan luokalla shot ja vihollisten ammukset luokalla blob. Blocker luokka muodostaa alueen, jolle muut objektit eivät voi mennä, tällä hetkellä kentän reunat. 
 Explosion on tällä hetkellä puhtaasti graafinen efekti. Explosion-luokka huolehtii myös blobien räjähdyksestä ja portaaliksi nimetyn efektin syntymisestä kun vihollisia syntyy lisää. 
+High_scorehandler vastaa pisteitä sisältävän tietokannan käytöstä.
 
 ## Sekvenssikaavio ammuksen syntymisestä, operaation onnistuessa ##
 

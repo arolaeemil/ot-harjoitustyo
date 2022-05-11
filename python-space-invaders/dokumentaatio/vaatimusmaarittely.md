@@ -36,3 +36,5 @@ Pelaajalle mahdollistetaan ainakin toisen ammustyypin ja/tai jonkinlaisen bonuse
 Pelissa on muunkinlaisia objekteja kuin vihollinen, ammukset ja alukset. Esimerkiksi tällainen voisi olla este tai asteroidi.
 
 Luodaan pelaajalle mahdollisuus valita pelin vaikeuteen vaikuttavia parametreja, esim. vihollisten määrä tai nopeus.
+
+Tietokannan laajennus siten että eri pelaajien tulokset nimetään erikseen ja voisi hakea vain omia tuloksiaan tai myös muiden.

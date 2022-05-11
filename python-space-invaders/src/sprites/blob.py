@@ -17,12 +17,20 @@ class Blob(pygame.sprite.Sprite):
             dirname, "..", "assets", "blob.png"))
         self.rect = self.image.get_rect()
 
-        # starting x- and y-coordinates
         self.rect.x = x_coord
         self.rect.y = y_coord
 
     def should_move(self, current_time):
+        """Tells if blob should move
+        Returns:
+            True: if should move
+            False: if should not move yet
+        """
         return current_time - self.previous_move_time >= 30
 
     def give_coords(self):
+        """Gives x- and y-coordinates
+        Returns:
+            x-coordinate, y-coordinate
+        """
         return (self.rect.x, self.rect.y)

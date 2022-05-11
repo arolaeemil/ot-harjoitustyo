@@ -1,23 +1,12 @@
 import os
 import unittest
-#import pygame
 from random import randint
 from level import Level
 from sprites.basicenemy import Basicenemy
+from sprites.boss import Boss
 from sprites.shot import Shot
 from sprites.blob import Blob
 
-# test map
-#n = 100
-#LEVEL_MAP = []
-# for i in range(0, n):
-# LEVEL_MAP.append([])
-# for j in range(0, n):
-# if j == 0 or j == (n-1) or i == 0 or i == (n-1):
-# LEVEL_MAP[i].append(2)
-# else:
-# LEVEL_MAP[i].append(0)
-#LEVEL_MAP[5][5] = 1
 
 CELL_SIZE = 10
 
@@ -41,14 +30,24 @@ LEVEL_MAP[10][10] = 3
 
 class TestLevel(unittest.TestCase):
     def setUp(self):
-        self.level = Level(LEVEL_MAP, CELL_SIZE)
-        #pygame.mixer.init()
-        # pass
+        self.level = Level(LEVEL_MAP, CELL_SIZE, 3, 0)
+        self.level_medium = Level(LEVEL_MAP, CELL_SIZE, 2, 0)
+        self.level_hard = Level(LEVEL_MAP, CELL_SIZE, 1, 0)
 
     def assert_coordinates_equal(self, sprite, x, y):
         self.assertEqual(sprite.rect.x, x)
         self.assertEqual(sprite.rect.y, y)
-        # pass
+    
+    def test_difficulties_work(self):
+        self.assertEqual(self.level.enemyspeed, 1)
+        self.assertEqual(self.level.enemylimit, 5)
+        self.assertEqual(self.level.extra_score, 1)
+        self.assertEqual(self.level_medium.enemyspeed, 1.5)
+        self.assertEqual(self.level_medium.enemylimit, 6)
+        self.assertEqual(self.level_medium.extra_score, 2)
+        self.assertEqual(self.level_hard.enemylimit, 7)
+        self.assertEqual(self.level_hard.enemyspeed, 2)
+        self.assertEqual(self.level_hard.extra_score, 3)
 
     def test_can_move(self):
         ship = self.level.ship
@@ -59,7 +58,6 @@ class TestLevel(unittest.TestCase):
 
         self.level.move_ship(diff_x=-CELL_SIZE)
         self.assert_coordinates_equal(ship, 4 * CELL_SIZE, 4 * CELL_SIZE)
-        # pass
 
     def test_cant_move_out(self):
         ship = self.level.ship
@@ -67,7 +65,6 @@ class TestLevel(unittest.TestCase):
         for i in range(1, 10000):
             self.level.move_ship(diff_x=-CELL_SIZE)
             self.level.move_ship(diff_y=-CELL_SIZE)
-        # border is at 2 cellsize at the moment
         self.assert_coordinates_equal(ship, 2 * CELL_SIZE, 2 * CELL_SIZE)
 
     def test_can_shoot_cooldown_timer_works(self):
@@ -108,7 +105,6 @@ class TestLevel(unittest.TestCase):
 
     def test_enemy_can_die_and_explodes(self):
         current_time = 10000
-        #self.level.shoot(self.level.ship, current_time)
         self.level.shots.add(Shot(10*CELL_SIZE, 10*CELL_SIZE))
         self.level.enemy_got_hit(current_time)
         self.assertEqual(len(self.level.enemies), 0)
@@ -136,16 +132,6 @@ class TestLevel(unittest.TestCase):
         self.level.update(current_time)
         self.assertEqual(len(self.level.portals), 0)
 
-    def test_score_is_saved(self):
-        self.level.score = 20
-        self.level.save_score()
-        rel_path = os.path.join("src", "record.txt")
-        with open(rel_path, "r") as file:
-            for line in file:
-                pass
-            last_line = line
-        self.assertEqual(int(last_line), 20)
-
     def test_boss_can_spawn(self):
         self.level.bosscounter = 15
         current_time = 10000
@@ -162,3 +148,45 @@ class TestLevel(unittest.TestCase):
             self.assertEqual(boss.is_kill(), True)
         self.level.boss_got_hit(current_time)
         self.assertEqual(len(self.level.bosses), 0)
+
+    def test_update_shots(self):
+        test_shot = Shot(100,100)
+        current_time = 50
+        self.level.shots.add(test_shot)
+        self.level.update_shots(current_time)
+        test_x, test_y = test_shot.give_coords()
+        self.assertEqual(test_y, 100-(10*self.level.gamespeed))
+        self.assertEqual(test_x, 100)
+        test_shot = Shot(0,0)
+        current_time = 50
+        self.level.shots.add(test_shot)
+        self.level.update_shots(current_time)
+        test_x, test_y = test_shot.give_coords()
+        self.assertEqual(len(self.level.shots), 1)
+    
+    def test_update_blobs(self):
+        test_blob = Blob(100,100)
+        current_time = 50
+        self.level.blobs.add(test_blob)
+        self.level.update_blobs(current_time)
+        test_x, test_y = test_blob.give_coords()
+        self.assertEqual(test_y, 100+(2*self.level.gamespeed))
+        self.assertEqual(test_x, 100)
+        test_blob = Blob(0,0)
+        current_time = 50
+        self.level.shots.add(test_blob)
+        self.level.update_shots(current_time)
+        test_x, test_y = test_blob.give_coords()
+        self.assertEqual(len(self.level.blobs), 1)
+
+    def test_boss_moves_and_shoots(self):
+        test_boss = Boss(400,400)
+        boss_x, boss_y = test_boss.give_coords()
+        self.level.bosses.add(test_boss)
+        current_time = 10000
+        self.level.boss_actions(current_time)
+        new_boss_x, new_boss_y = test_boss.give_coords()
+        is_same_coord = boss_x == new_boss_x
+        self.assertEqual(is_same_coord, False)
+        self.assertEqual(boss_y, new_boss_y)
+        self.assertEqual(len(self.level.blobs), 1)

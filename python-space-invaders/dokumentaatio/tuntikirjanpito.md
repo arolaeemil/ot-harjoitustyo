@@ -36,6 +36,10 @@ Yhteensä 4 tuntia. Tehty sekvenssikaavio ammuksen syntymisestä ja yritetty lis
 **9.5**
 Yhteensä 1 tunti. Hiouttu dokumentaatiota paremmaksi, korjattu mahdollisia virheitä/puutteita.
 
+**10.5**
+Yhteensä 2 tuntia. Muutettu level-luokan koodia siten, että huomattavasti luettavampaa, päästy eroon isosta osasta massiivisen pitkiä
+metodeita ja copy-paste koodista, jota oli jäljellä. Parannettu myös dokumentaatiota.
+
 Laskettujen tuntien lisäksi varmaankin yhteensä ainakin 10 tuntia "tappelua" Ubuntu for windowsin, windows 10 ja laitoksen koneiden saamiseksi kaikki olemaan sitä mieltä että kaikki on ok.
 
 **Summa: 35 + (10h)**

@@ -33,12 +33,26 @@ class Spaceship(pygame.sprite.Sprite):
             dirname, "..", "assets", "pam.wav")
 
     def give_coords(self):
+        """Gives x- and y-coordinates
+        Returns:
+            x-coordinate, y-coordinate
+        """
         return (self.rect.x, self.rect.y)
 
     def can_shoot(self, current_time):
+        """Tells if ship can shoot
+        Returns:
+            True: if can shoot
+            False: if can not shoot yet
+        """
         return current_time - self.previous_shot_time >= 1000
 
     def is_dead(self):
+        """tells if ship has used all is health and is therefore considered dead
+        Returns:
+            True: if ship is dead
+            False: if ship still lives
+        """
         if self.health <= 0:
             return True
         return False

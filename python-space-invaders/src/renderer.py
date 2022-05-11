@@ -26,7 +26,7 @@ class Renderer:
         font = pygame.font.SysFont("Arial", 48)
         text = font.render("GAME OVER", True, (255, 0, 0))
         self._display.fill((0, 0, 0))
-        self._display.blit(text, (int(tubel[0]/3), int(tubel[1]/2)))
+        self._display.blit(text, (int(tubel[0]/4), int(tubel[1]/2)))
         if self.is_over == 0:
             self._level.save_scoredb()
         self.is_over = 1
@@ -39,6 +39,6 @@ class Renderer:
         if score >= best:
             scoretext = font.render(
                 "score: " + str(score) + ", it is the new record ", True, (255, 0, 0))
-        self._display.blit(scoretext, (int(tubel[0]/3), int(tubel[1]/3)))
+        self._display.blit(scoretext, (int(tubel[0]/4), int(tubel[1]/3)))
         pygame.display.update()
         

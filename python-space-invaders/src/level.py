@@ -168,7 +168,7 @@ class Level:
                 sound = pygame.mixer.Sound(self.ship.shootsoundpath2)
                 pygame.mixer.Sound.play(sound)
             coord = self.ship.give_coords()
-            self.make_one_explosion(coord,current_time,1)
+            self.make_one_explosion(coord,current_time,3)
             self.ship.health = self.ship.health - 1
         is_collide = pygame.sprite.spritecollide(self.ship, self.enemies, True)
         if is_collide:

@@ -64,11 +64,17 @@ def inquire_parameters():
     print("The game is starting, you will be asked for a few choices.")
     print("There are 3 different difficulties: hard, medium, easy")
     questionstring = "Please enter the difficulty you desire:\n 1 = Hard, 2 = medium, 3 = easy\n"
-    level_difficulty = int(input(questionstring))
+    try:
+        level_difficulty = int(input(questionstring))
+    except ValueError:
+        level_difficulty = -1
     if level_difficulty not in [1, 2, 3]:
         level_difficulty = 2
         print("improper input, medium was chosen as default")
-    sounds_on_off = int(input("Do you want to play with sounds on? 1 = yes, 0 = no\n"))
+    try:
+        sounds_on_off = int(input("Do you want to play with sounds on? 1 = yes, 0 = no\n"))
+    except ValueError:
+        sounds_on_off = -1
     if sounds_on_off not in [0, 1]:
         sounds_on_off = 0
         print("improper input, sounds off was chosen as default")

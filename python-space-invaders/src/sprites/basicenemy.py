@@ -28,7 +28,7 @@ class Basicenemy(pygame.sprite.Sprite):
 
         self.previous_move_time = 0
         self.previous_shot_time = 0
-        
+
         self.rect.x = x_coord
         self.rect.y = y_coord
         if self.what_type == 1:
